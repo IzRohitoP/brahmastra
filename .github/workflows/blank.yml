@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'dropboxforum.com'
+  DOMAIN: 'upstox.com'
 
 jobs:
   subdomains:
@@ -166,7 +166,7 @@ jobs:
 
     - name: Secret Finder by analyzing js file   
       run: |
-        cat waybackurls.txt | grep -iE '\.js' > endpoints_with_js.txt
+        grep -iE '\.js$' waybackurls.txt > endpoints_with_js.txt
         cat endpoints_with_js.txt | while read js ; do python3 ~/SecretFinder/SecretFinder.py -i $js -o cli > secretfinder.txt;done
       shell: bash
 
