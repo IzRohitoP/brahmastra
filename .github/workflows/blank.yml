@@ -167,7 +167,8 @@ jobs:
 
     - name: Secret Finder by analyzing js file   
       run: |
-        cat waybackurls.txt | while read js ; do python3 ~/SecretFinder/SecretFinder.py -i $js -o cli > secretfinder.txt
+        cat waybackurls.txt | grep js > endpoints_with_js.txt
+        cat endpoints_with_js.txt | while read js ; do python3 ~/SecretFinder/SecretFinder.py -i $js -o cli > secretfinder.txt
       shell: bash
 
     - name: Save results
