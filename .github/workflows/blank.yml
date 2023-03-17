@@ -109,8 +109,8 @@ jobs:
       run: |
         cat 200httpx.txt | waybackurls > waybackurls.txt
       shell: bash
-    
-    -name: Split the endpoint in 5 equal chunks
+
+    - name: Split the endpoint in 10 equal chunks
       run: |
         split -l $(( $(wc -l < waybackurls.txt) / 10 + 1)) waybackurls.txt split_ -a 1 -d --additional-suffix=.txt
       shell: bash
