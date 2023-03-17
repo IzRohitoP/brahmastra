@@ -353,12 +353,12 @@ jobs:
 
     - name: Install Required Tools 
       run: |
-        timeout 5h sh -c 'nuclei -l split_7.txt -es info  | tee nuclei_output8.txt; kill -TERM $$'
+        go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
       shell: bash
 
     - name: Vulnarability Scanning  
       run: |
-        nuclei -l split_0.txt -es info > nuclei_output1.txt
+        timeout 5h sh -c 'nuclei -l split_7.txt -es info  | tee nuclei_output8.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -368,7 +368,7 @@ jobs:
         path: |
           nuclei_output8.txt
   
-    Nuclei-9:
+ Nuclei-9:
     runs-on: ubuntu-latest
     needs: EndPonts-Waybackurls
     steps:
@@ -397,7 +397,8 @@ jobs:
         name: nuclei_output results
         path: |
           nuclei_output9.txt
-  Nuclei-10:
+
+ Nuclei-10:
     runs-on: ubuntu-latest
     needs: EndPonts-Waybackurls
     steps:
@@ -417,7 +418,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        nuclei -l split_9.txt -es info > nuclei_output10.txt
+        timeout 5h sh -c 'nuclei -l split_9.txt -es info  | tee nuclei_output10.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
