@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'bbc.com'
+  DOMAIN: 'asus.com'
 
 jobs:
   subdomains:
@@ -152,7 +152,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_0.txt -es info  | tee nuclei_output1.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_0.txt -es info  | tee nuclei_output1.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -182,7 +182,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_1.txt -es info  | tee nuclei_output2.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_1.txt -es info  | tee nuclei_output2.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -212,7 +212,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_2.txt -es info  | tee nuclei_output3.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_2.txt -es info  | tee nuclei_output3.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -242,7 +242,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_3.txt -es info  | tee nuclei_output4.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_3.txt -es info  | tee nuclei_output4.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -271,7 +271,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_4.txt -es info  | tee nuclei_output5.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_4.txt -es info  | tee nuclei_output5.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -300,7 +300,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_5.txt -es info  | tee nuclei_output6.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_5.txt -es info  | tee nuclei_output6.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -329,7 +329,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_6.txt -es info  | tee nuclei_output7.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_6.txt -es info  | tee nuclei_output7.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -358,7 +358,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_7.txt -es info  | tee nuclei_output8.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_7.txt -es info  | tee nuclei_output8.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -388,7 +388,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_8.txt -es info  | tee nuclei_output9.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_8.txt -es info  | tee nuclei_output9.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -418,7 +418,7 @@ jobs:
 
     - name: Vulnarability Scanning  
       run: |
-        timeout 5h sh -c 'nuclei -l split_9.txt -es info  | tee nuclei_output10.txt; kill -TERM $$'
+        timeout 40h sh -c 'nuclei -l split_9.txt -es info  | tee nuclei_output10.txt; kill -TERM $$'
       shell: bash
 
     - name: Save results
@@ -448,7 +448,7 @@ jobs:
     - name: Secret Finder by analyzing js file   
       run: |
         grep -iE '\.js$' waybackurls.txt > endpoints_with_js.txt
-        cat endpoints_with_js.txt | while read js ; do python3 ~/SecretFinder/SecretFinder.py -i $js -o cli > secretfinder.txt;done
+        cat endpoints_with_js.txt | while read js ; do python3 ~/SecretFinder/SecretFinder.py -i $js -o cli | tee -a secretfinder.txt;done
       shell: bash
 
     - name: Save results
