@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'maleehospitality.asia'
+  DOMAIN: 'canva.com'
 
 jobs:
   subdomains:
