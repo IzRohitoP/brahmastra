@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'canva.com'
+  DOMAIN: 'peachmode.com'
 
 jobs:
   subdomains:
