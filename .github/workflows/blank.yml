@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'peachmode.com'
+  DOMAIN: 'vulnweb.com'
 
 jobs:
   subdomains:
