@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'vulnweb.com'
+  DOMAIN: 'pentest.cdd.io'
 
 jobs:
   subdomains:
