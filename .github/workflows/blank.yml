@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'pentest.cdd.io'
+  DOMAIN: 'collaborativedrug.com'
 
 jobs:
   subdomains:
