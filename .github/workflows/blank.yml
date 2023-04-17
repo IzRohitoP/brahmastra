@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'collaborativedrug.com'
+  DOMAIN: 'bia.gov'
 
 jobs:
   subdomains:
