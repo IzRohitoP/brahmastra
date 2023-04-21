@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'indriver.com'
+  DOMAIN: 'natwestgroup.com'
 
 jobs:
   subdomains:
