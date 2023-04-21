@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'rec.net'
+  DOMAIN: 'hostgator.in'
 
 jobs:
   subdomains:
