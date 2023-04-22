@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  DOMAIN: 'sahr.stanford.edu'
+  DOMAIN: 'coca-cola.com'
 
 jobs:
   subdomains:
